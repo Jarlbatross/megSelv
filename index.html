@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jarl Aanes</title>
+
+    <style>
+      body {
+        background-color: wheat;
+      }
+      .styling {
+        display: grid;
+        grid-template-areas:
+          'text picture'
+          'list .';
+        grid-template-columns: (2, 200px);
+        font-size: larger;
+      }
+      h1.headline {
+        text-align: center;
+      }
+      .pictureFrame {
+        grid-area: picture;
+      }
+    </style>
+  </head>
+  <body>
+    <div id>
+      <h1 class="headline">Biografi om Jarl Aanes</h1>
+      <button onclick="showHobbies()">Hobbyer</button>
+      <button onclick="showInfo()">Info</button>
+      <button onclick="showBoardGames()">Brettspill</button>
+      <div class="styling">
+        <div id="mainText"></div>
+        <div class="pictureFrame">
+          <img src="img\jarl.jpg" height="90%" width="35%" />/
+        </div>
+      </div>
+
+      <button onclick="changeColor()">Fargevalg</button>
+    </div>
+  </body>
+
+  <script>
+    let info = `<div>Her skal det komme en kort tekst om hvem Jarl er</div>`;
+    let hobbies = `<div>
+        <h3>Hobbyer</h3>
+        <ul>
+          <li>Klatring</li>
+          <li>Brettspill</li>
+          <li>Øl</li>
+          <li>Rollespill</li>
+          <li>Gaming</li>
+        </ul>
+      </div>`;
+
+    let boardGames = `<div>Noen av mine favorittbrettspill er:
+        <ul>
+          <li>Carcassonne</li>
+          <li>Dominion</li>
+          <li>Secret Hitler</li>
+          <li>Captain Sonar</li>
+          <li>Gloomhaven</li>
+        </ul></div>`;
+
+    function showInfo() {
+      document.getElementById('mainText').innerHTML = info;
+    }
+    function showBoardGames() {
+      document.getElementById('mainText').innerHTML = boardGames;
+    }
+    function showHobbies() {
+      document.getElementById('mainText').innerHTML = hobbies;
+    }
+
+    function changeColor() {
+      document.body.style.backgroundColor = 'yellow';
+      document.body.style.color = 'red';
+    }
+  </script>
+</html>
